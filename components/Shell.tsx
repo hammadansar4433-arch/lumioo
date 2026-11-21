@@ -5,8 +5,8 @@ import {LayoutGrid,MessageCircle,Wand2,Sun,Moon,Sparkles} from "lucide-react";
 import {useEffect,useState} from "react";
 const nav=[{href:"/dashboard",label:"Home",I:LayoutGrid},{href:"/chat",label:"Tutor",I:MessageCircle},{href:"/tools",label:"Tools",I:Wand2}];
 export default function Shell({children}:{children:React.ReactNode}){
-  const path=usePathname();const [theme,setTheme]=useState("dark");
-  useEffect(()=>setTheme(document.documentElement.getAttribute("data-theme")||"dark"),[]);
+  const path=usePathname();const [theme,setTheme]=useState("dark");const [today,setToday]=useState("");
+  useEffect(()=>{setTheme(document.documentElement.getAttribute("data-theme")||"dark");setToday(new Date().toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"}));},[]);
   const toggle=()=>{const n=theme==="dark"?"light":"dark";setTheme(n);document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("lumio-theme",n)}catch{}};
   return(<div className="min-h-screen md:pl-28">
     {/* floating icon rail (desktop) */}
@@ -18,7 +18,7 @@ export default function Shell({children}:{children:React.ReactNode}){
     </aside>
     <div className="mx-auto max-w-6xl px-4 pb-28 pt-4 md:px-8 md:pb-10">
       <header className="mb-6 flex items-center justify-between">
-        <div className="text-sm text-mute">{new Date().toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"})}</div>
+        <div className="text-sm text-mute">{today}</div>
         <Link href="/chat" className="btn-primary"><Sparkles size={15}/>Ask Lumio</Link>
       </header>
       {children}

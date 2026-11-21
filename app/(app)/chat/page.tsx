@@ -6,7 +6,7 @@ type Msg={role:"user"|"assistant";content:string};
 const ideas=["Explain B-tree splitting simply","Make me a 3-day revision plan for OS","Quiz me on subnetting"];
 export default function Chat(){
   const [msgs,setMsgs]=useState<Msg[]>([]);const [text,setText]=useState("");const [busy,setBusy]=useState(false);const end=useRef<HTMLDivElement>(null);
-  useEffect(()=>end.current?.scrollIntoView({behavior:"smooth"}),[msgs]);
+ useEffect(()=>{end.current?.scrollIntoView({behavior:"smooth"});},[msgs]);
   async function send(q:string){
     if(!q.trim()||busy)return;setText("");setBusy(true);
     const next:Msg[]=[...msgs,{role:"user",content:q}];setMsgs([...next,{role:"assistant",content:""}]);

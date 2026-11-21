@@ -27,4 +27,7 @@ export default function Shell({children}:{children:React.ReactNode}){
     <nav className="fixed inset-x-4 bottom-4 z-30 flex justify-around rounded-3xl border border-line/70 bg-surface/80 p-2 backdrop-blur-xl md:hidden">{nav.map(({href,label,I})=>{const on=path.startsWith(href);return(
       <Link key={href} href={href} className={`flex flex-1 flex-col items-center gap-0.5 rounded-2xl py-2 text-[10px] font-semibold ${on?"bg-brand/15 text-brand":"text-mute"}`}><I size={20}/>{label}</Link>);})}</nav>
   </div>);
+} 
+<Link key={href} href={href} className={`flex flex-1 ... `}><I size={20}/>{label}</Link>);})}</nav>
+  </div>);
 }

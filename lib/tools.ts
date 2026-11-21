@@ -1,0 +1,17 @@
+export type Tool={slug:string;name:string;desc:string;placeholder:string;system:string};
+const f="Format clearly with short headings and bullet points where useful. Be accurate and student-friendly.";
+export const TOOLS:Tool[]=[
+{slug:"summarizer",name:"Summarizer",desc:"Condense long text into key points.",placeholder:"Paste text or a reading...",system:`Summarize the user's text into a short summary plus 5-8 key points. ${f}`},
+{slug:"essay-writer",name:"Essay Writer",desc:"Outline and draft essays from your thesis.",placeholder:"Topic + your thesis...",system:`Create an essay outline then a full draft based on the user's topic/thesis. ${f}`},
+{slug:"research-assistant",name:"Research Assistant",desc:"Angles, questions and source ideas.",placeholder:"Your research topic...",system:`Suggest research angles, key questions and types of sources to look for. Never invent citations. ${f}`},
+{slug:"grammar-checker",name:"Grammar Checker",desc:"Fix grammar and improve clarity.",placeholder:"Paste your writing...",system:`Correct grammar and clarity. Show the corrected text, then a short list of the main changes and why. ${f}`},
+{slug:"quiz-generator",name:"Quiz Generator",desc:"Multiple-choice quizzes from your material.",placeholder:"Paste notes or a topic...",system:`Create a 5-question multiple choice quiz (A-D) from the material, then an answer key with one-line explanations. ${f}`},
+{slug:"flashcard-generator",name:"Flashcard Generator",desc:"Turn notes into Q/A flashcards.",placeholder:"Paste notes...",system:`Create 10 flashcards in the format "Q: ... / A: ..." from the material. ${f}`},
+{slug:"question-generator",name:"Question Generator",desc:"Exam-style practice questions.",placeholder:"Topic or notes...",system:`Write 8 exam-style practice questions of mixed difficulty (short and long answer). Add brief model answers at the end. ${f}`},
+{slug:"study-notes",name:"Study Notes",desc:"Clean, structured notes from messy input.",placeholder:"Paste lecture text...",system:`Turn the input into well-structured study notes with headings, definitions and examples. ${f}`},
+{slug:"mind-map",name:"Mind Map",desc:"Topic breakdown as a nested outline.",placeholder:"Topic...",system:`Produce a mind map as a nested bullet outline: central topic, main branches, sub-branches. ${f}`},
+{slug:"math-solver",name:"Math Solver",desc:"Step-by-step solutions.",placeholder:"Type your math problem...",system:`Solve the math problem step by step, explaining each step, and state the final answer clearly. ${f}`},
+{slug:"code-assistant",name:"Code Assistant",desc:"Explain, debug and write code.",placeholder:"Paste code or describe the task...",system:`Help with code: explain, find bugs, or write it. Use fenced code blocks and explain briefly. ${f}`},
+{slug:"language-tutor",name:"Language Tutor",desc:"Practice and learn languages.",placeholder:"e.g. Teach me 10 Spanish travel phrases",system:`Act as a patient language tutor. Give translations, pronunciation hints and short practice exercises. ${f}`},
+{slug:"pdf-reader",name:"PDF Reader",desc:"Ask questions about pasted PDF text.",placeholder:"Paste PDF text, then your question...",system:`The user pastes text from a document and may ask a question. Answer only from that text; say if it isn't there. ${f}`},
+{slug:"presentation-maker",name:"Presentation Maker",desc:"Slide-by-slide outline for a talk.",placeholder:"Topic and audience...",system:`Create a slide-by-slide presentation outline (title, 3-4 bullets, speaker note per slide). ${f}`}];
